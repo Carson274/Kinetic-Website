@@ -1,13 +1,44 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+    <!--This will appear on the website's tab.-->
+    <title>Kinetic</title>
+
+    <!--Linking html file with css file.-->
+    <link rel="stylesheet" href="index.css">
+
+    <!--Meta tags.-->
+    <meta charset="UTF-8">
+    <meta name="description" content="My club's website'.">
+    <meta name="keywords" content="HTML">
+    <meta name="author" content="Carson Secrest">
+
+    <!--Scales with mobile device.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Little favicon logo :)-->
+    <link rel="icon" href="images/kinetic_logo_white_transparent.png">
+</head>
+<body>
+    <img class="cursor" src="images/cursor_star.png">
+    <div class="progress-bar"></div>
+    <div class="intro-container">
+        <video id="intro" autoplay muted loop>
+            <source src="videos/kinetic_intro_teal.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- <div class="underline-container">
+        <hr id="intro-underline">
+    </div> -->
+    <section class="mission">
+        <div id="mission-title">
+            Mission
+        </div>
+        <div id="mission-statement">
+            To foster a community of individuals who share common interests for K-pop and dancing - or for people who just want to have fun :)
+        </div>
+    </section>
+    <script src="index.tsx" type="module"></script>
+</body>
+
 </html>
