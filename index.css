@@ -7,11 +7,12 @@ body {
 }
 
 .cursor {
-    position: absolute;
+    position: fixed;
     width: 60px;
     height: 60px;;
     pointer-events: none;
     opacity: 0.5;
+    z-index: 20;
 }
 
 @keyframes fallingsparkles {
@@ -33,6 +34,7 @@ body {
     background-color: #fff;
     z-index: 1000;
     transform: translateX(-50%);
+    transition: background-color 1.5s;
 }
 
 .intro-container {
@@ -115,14 +117,84 @@ body {
     display: flex;
     flex-flow: column;
     height: 100vh;
-    width: 50%;
+    width: 30%;
+}
+
+.event-description h1 {
+    font-size: 80px;
+    margin: 0;
+}
+
+.event-description h2 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.event-description h3 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.event-date {
+    margin-bottom: 20px;
 }
 
 .event-pictures {
     margin-left: 50%;
-    width: 50%;
+    width: 70%;
     height: 400vh;
     display: flex;
     flex-flow: column;
-    overflow-y: auto;
+    overflow-y: shown;
+}
+
+.fall-event-pictures {
+    margin-top: 10vh;
+    height: 100vh;
+    position: relative;
+}
+
+.fall-event-pictures #fall-event-gradient {
+    position: fixed;
+    background: linear-gradient(to left, rgb(255, 0, 0), black);
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    transition: opacity 1.5s;
+}
+
+.fall-event-pictures #fall-event-1 {
+    transition: transform 0.1s ease-out 0s;
+    top: 190vh;
+    left: -8vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 5;
+}
+.fall-event-pictures #fall-event-2 {
+    transition: transform 0.2s ease-out 0s;
+    top: 140vh;
+    left: 20vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 4;
+}
+.fall-event-pictures #fall-event-3 {
+    transition: transform 0.2s ease-out 0s;
+    top: 130vh;
+    left: -6vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 2;
+}
+.fall-event-pictures #fall-event-4 {
+    transition: transform 0.2s ease-out 0s;
+    top: 120vh;
+    left: 20vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 3;
 }
