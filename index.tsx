@@ -6,10 +6,16 @@ window.onload = () => {
 };
 
 const eventDescription = document.querySelector('.event-description') as HTMLElement;
+eventDescription.style.transition = 'none';
 eventDescription.style.opacity = '0';
 
-const fallEventGradient = document.querySelector('#fall-event-gradient') as HTMLElement;
-fallEventGradient.style.opacity = '0';
+const halloweenEventGradient = document.querySelector('#halloween-event-gradient') as HTMLElement;
+halloweenEventGradient.style.transition = 'none';
+halloweenEventGradient.style.opacity = '0';
+
+const showcaseEventGradient = document.querySelector('#showcase-event-gradient') as HTMLElement;
+showcaseEventGradient.style.transition = 'none';
+showcaseEventGradient.style.opacity = '0';
 
 window.addEventListener('scroll', () => {
     // slide the "mission" title
@@ -22,44 +28,57 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = `${scrollPercentage * 100}%`;
 
     // show the event description
-    if(window.scrollY <= 1700) {
+    if(window.scrollY < 1600) {
         eventDescription.style.opacity = '0';
-        // eventDescription.style.transition = 'none';
     } else if(window.scrollY > 1700 && window.scrollY < 2300) {
         eventDescription.style.opacity = '1';
-        // eventDescription.style.transition = 'opacity 1s';
     } else {
         eventDescription.style.opacity = '0';
-        // eventDescription.style.transition = 'opacity 1s';
     }
 
     // move the photos
-    const fallEvent1 = document.querySelector('#fall-event-1') as HTMLElement;
-    fallEvent1.style.transform = `translate(0px, ${-1000 * scrollPercentage}%) scale(0.8)`;
+    const halloweenEvent1 = document.querySelector('#halloween-event-1') as HTMLElement;
+    halloweenEvent1.style.transform = `translate(0px, ${-1000 * scrollPercentage}%) scale(0.8)`;
+    const halloweenEvent2 = document.querySelector('#halloween-event-2') as HTMLElement;
+    halloweenEvent2.style.transform = `translate(0px, ${-600 * scrollPercentage}%) scale(0.8)`;
+    const halloweenEvent3 = document.querySelector('#halloween-event-3') as HTMLElement;
+    halloweenEvent3.style.transform = `translate(0px, ${-450 * scrollPercentage}%) scale(0.7)`;
+    const halloweenEvent4 = document.querySelector('#halloween-event-4') as HTMLElement;
+    halloweenEvent4.style.transform = `translate(0px, ${-300 * scrollPercentage}%) scale(0.7)`;
 
-    const fallEvent2 = document.querySelector('#fall-event-2') as HTMLElement;
-    fallEvent2.style.transform = `translate(0px, ${-600 * scrollPercentage}%) scale(0.8)`;
-
-    const fallEvent3 = document.querySelector('#fall-event-3') as HTMLElement;
-    fallEvent3.style.transform = `translate(0px, ${-450 * scrollPercentage}%) scale(0.7)`;
-
-    const fallEvent4 = document.querySelector('#fall-event-4') as HTMLElement;
-    fallEvent4.style.transform = `translate(0px, ${-300 * scrollPercentage}%) scale(0.7)`;
+    const showcaseEvent1 = document.querySelector('#showcase-event-1') as HTMLElement;
+    showcaseEvent1.style.transform = `translate(0px, ${-1000 * scrollPercentage}%) scale(0.8)`;
+    const showcaseEvent2 = document.querySelector('#showcase-event-2') as HTMLElement;
+    showcaseEvent2.style.transform = `translate(0px, ${-600 * scrollPercentage}%) scale(0.8)`;
+    const showcaseEvent3 = document.querySelector('#showcase-event-3') as HTMLElement;
+    showcaseEvent3.style.transform = `translate(0px, ${-450 * scrollPercentage}%) scale(0.7)`;
+    const showcaseEvent4 = document.querySelector('#showcase-event-4') as HTMLElement;
+    showcaseEvent4.style.transform = `translate(0px, ${-300 * scrollPercentage}%) scale(0.7)`;
 
     // add gradient with photos
     if(window.scrollY > 1600 && window.scrollY < 2400) {
-        fallEventGradient.style.opacity = '1';
+        showcaseEventGradient.style.opacity = '0';
+        halloweenEventGradient.style.transition = 'opacity 1.5s';
+        halloweenEventGradient.style.opacity = '1';
         progressBar.style.backgroundColor = 'red';
-    } else {
-        fallEventGradient.style.opacity = '0';
+    } else if(window.scrollY > 2400 && window.scrollY < 3000) {
+        halloweenEventGradient.style.opacity = '0';
+        showcaseEventGradient.style.transition = 'opacity 1.5s';
+        showcaseEventGradient.style.opacity = '1';
+        progressBar.style.backgroundColor = 'blue';
+    } else{
+        halloweenEventGradient.style.opacity = '0';
+        showcaseEventGradient.style.opacity = '0';
         progressBar.style.backgroundColor = 'white';
     }
 });
 
 const cursor = document.querySelector('.cursor') as HTMLElement;
 let cursorPosition = { x: 0, y: 0 };
+cursor.style.display = 'hidden';
 
 window.addEventListener('mousemove', function (e) {
+    cursor.style.display = 'shown';
     cursor.style.left = `${e.clientX - 30}px`;
     cursor.style.top = `${e.clientY - 32}px`;
     cursorPosition.x = e.clientX;

@@ -148,13 +148,13 @@ body {
     overflow-y: shown;
 }
 
-.fall-event-pictures {
+.halloween-event-pictures {
     margin-top: 10vh;
     height: 100vh;
     position: relative;
 }
 
-.fall-event-pictures #fall-event-gradient {
+.halloween-event-pictures #halloween-event-gradient {
     position: fixed;
     background: linear-gradient(to left, rgb(255, 0, 0), black);
     top: 0;
@@ -165,8 +165,7 @@ body {
     z-index: 1;
     transition: opacity 1.5s;
 }
-
-.fall-event-pictures #fall-event-1 {
+.halloween-event-pictures #halloween-event-1 {
     transition: transform 0.1s ease-out 0s;
     top: 190vh;
     left: -8vw;
@@ -174,7 +173,7 @@ body {
     height: 40vh;
     z-index: 5;
 }
-.fall-event-pictures #fall-event-2 {
+.halloween-event-pictures #halloween-event-2 {
     transition: transform 0.2s ease-out 0s;
     top: 140vh;
     left: 20vw;
@@ -182,7 +181,7 @@ body {
     height: 40vh;
     z-index: 4;
 }
-.fall-event-pictures #fall-event-3 {
+.halloween-event-pictures #halloween-event-3 {
     transition: transform 0.2s ease-out 0s;
     top: 130vh;
     left: -6vw;
@@ -190,7 +189,57 @@ body {
     height: 40vh;
     z-index: 2;
 }
-.fall-event-pictures #fall-event-4 {
+.halloween-event-pictures #halloween-event-4 {
+    transition: transform 0.2s ease-out 0s;
+    top: 120vh;
+    left: 20vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 3;
+}
+
+
+.showcase-event-pictures {
+    margin-top: 10vh;
+    height: 100vh;
+    position: relative;
+}
+.showcase-event-pictures #showcase-event-gradient {
+    position: fixed;
+    background: linear-gradient(to left, blue, black);
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    transition: opacity 1.5s;
+}
+.showcase-event-pictures #showcase-event-1 {
+    transition: transform 0.1s ease-out 0s;
+    top: 190vh;
+    left: -8vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 5;
+}
+.showcase-event-pictures #showcase-event-2 {
+    transition: transform 0.2s ease-out 0s;
+    top: 140vh;
+    left: 20vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 4;
+}
+.showcase-event-pictures #showcase-event-3 {
+    transition: transform 0.2s ease-out 0s;
+    top: 130vh;
+    left: -6vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 2;
+}
+.showcase-event-pictures #showcase-event-4 {
     transition: transform 0.2s ease-out 0s;
     top: 120vh;
     left: 20vw;
