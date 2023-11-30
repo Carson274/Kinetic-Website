@@ -21,6 +21,20 @@ const nightmarketEventGradient = document.querySelector('#nightmarket-event-grad
 nightmarketEventGradient.style.transition = 'none';
 nightmarketEventGradient.style.opacity = '0';
 
+
+// get the event dates
+const halloweenEventDate = document.querySelector('#halloween-event-date') as HTMLElement;
+const showcaseEventDate = document.querySelector('#showcase-event-date') as HTMLElement;
+const nightmarketEventDate = document.querySelector('#nightmarket-event-date') as HTMLElement;
+
+// event date box
+const halloweenEventName1Box = document.querySelector('#halloween-event-name-1-box') as HTMLElement;
+
+// get all the event titles
+const halloweenEventName1 = document.querySelector('#halloween-event-name-1') as HTMLElement;
+const halloweenEventName2 = document.querySelector('#halloween-event-name-2') as HTMLElement;
+const halloweenEventName3 = document.querySelector('#halloween-event-name-3') as HTMLElement;
+
 window.addEventListener('scroll', () => {
     // slide the "mission" title
     const missionTitle = document.querySelector('#mission-title') as HTMLElement;
@@ -32,12 +46,46 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = `${scrollPercentage * 100}%`;
 
     // show the event description
-    if(window.scrollY < 1600) {
+    if(window.scrollY < 1700) {
         eventDescription.style.opacity = '0';
-    } else if(window.scrollY > 1700 && window.scrollY < 2300) {
+        showcaseEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        nightmarketEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+
+        // name animations
+        halloweenEventName1.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventName2.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventName3.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+
+    } else if(window.scrollY > 1700 && window.scrollY < 2400) {
         eventDescription.style.opacity = '1';
+        showcaseEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventDate.style.animation = 'slide-up 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        nightmarketEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+
+        // name animations
+        halloweenEventName1.style.opacity = '0';
+        halloweenEventName1.style.animation = 'slide-up-name 0.6s cubic-bezier(0, 0.1, 0.12, 0.99) 0.6s 1 normal forwards';
+        halloweenEventName2.style.opacity = '0';
+        halloweenEventName2.style.animation = 'slide-up-name 0.6s cubic-bezier(0, 0.1, 0.12, 0.99) 0.8s 1 normal forwards';
+        halloweenEventName3.style.opacity = '0';
+        halloweenEventName3.style.animation = 'slide-up-name 0.6s cubic-bezier(0, 0.1, 0.12, 0.99) 1.2s 1 normal forwards';
+
+    } else if(window.scrollY > 2400 && window.scrollY < 3200) {
+        eventDescription.style.opacity = '1';
+        showcaseEventDate.style.animation = 'slide-up 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        nightmarketEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+    } else if(window.scrollY > 3200 && window.scrollY < 3800){
+        eventDescription.style.opacity = '1';
+        showcaseEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        nightmarketEventDate.style.animation = 'slide-up 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
     } else {
         eventDescription.style.opacity = '0';
+        showcaseEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        nightmarketEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
     }
 
     // move the photos
@@ -69,12 +117,18 @@ window.addEventListener('scroll', () => {
     nightmarketEvent4.style.transform = `translate(0px, ${-300 * scrollPercentage}%) scale(0.7)`;
 
     // add gradient with photos
-    if(window.scrollY > 1600 && window.scrollY < 2400) {
+    if(window.scrollY > 1700 && window.scrollY < 2400) {
+        // clear other gradients
         showcaseEventGradient.style.opacity = '0';
         nightmarketEventGradient.style.opacity = '0';
+
+        // show halloween gradient
         halloweenEventGradient.style.transition = 'opacity 1.5s';
         halloweenEventGradient.style.opacity = '1';
+
+        // change progress bar color
         progressBar.style.backgroundColor = 'red';
+
     } else if(window.scrollY > 2400 && window.scrollY < 3200) {
         halloweenEventGradient.style.opacity = '0';
         nightmarketEventGradient.style.opacity = '0';
