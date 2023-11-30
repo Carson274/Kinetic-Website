@@ -49,6 +49,7 @@ body {
 
 .intro-container #intro {
     height: 90%;
+    z-index: 22;
 }
 
 /* .underline-container {
@@ -198,9 +199,8 @@ body {
     z-index: 3;
 }
 
-
 .showcase-event-pictures {
-    margin-top: 10vh;
+    margin-top: 60vh;
     height: 100vh;
     position: relative;
 }
@@ -217,7 +217,7 @@ body {
 }
 .showcase-event-pictures #showcase-event-1 {
     transition: transform 0.1s ease-out 0s;
-    top: 190vh;
+    top: 220vh;
     left: -8vw;
     position: absolute;
     height: 40vh;
@@ -225,7 +225,7 @@ body {
 }
 .showcase-event-pictures #showcase-event-2 {
     transition: transform 0.2s ease-out 0s;
-    top: 140vh;
+    top: 130vh;
     left: 20vw;
     position: absolute;
     height: 40vh;
@@ -233,7 +233,7 @@ body {
 }
 .showcase-event-pictures #showcase-event-3 {
     transition: transform 0.2s ease-out 0s;
-    top: 130vh;
+    top: 120vh;
     left: -6vw;
     position: absolute;
     height: 40vh;
@@ -241,9 +241,59 @@ body {
 }
 .showcase-event-pictures #showcase-event-4 {
     transition: transform 0.2s ease-out 0s;
-    top: 120vh;
+    top: 90vh;
     left: 20vw;
     position: absolute;
     height: 40vh;
     z-index: 3;
+}
+
+.nightmarket-event-pictures {
+    margin-top: 60vh;
+    height: 100vh;
+    position: relative;
+}
+.nightmarket-event-pictures #nightmarket-event-gradient {
+    position: fixed;
+    background: linear-gradient(to left, white, black);
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    transition: opacity 1.5s;
+}
+.nightmarket-event-pictures #nightmarket-event-1 {
+    transition: transform 0.1s ease-out 0s;
+    top: 250vh;
+    left: -8vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 5;
+}
+.nightmarket-event-pictures #nightmarket-event-2 {
+    transition: transform 0.2s ease-out 0s;
+    top: 130vh;
+    left: 20vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 4;
+}
+.nightmarket-event-pictures #nightmarket-event-3 {
+    transition: transform 0.2s ease-out 0s;
+    top: 110vh;
+    left: -6vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 2;
+}
+.nightmarket-event-pictures #nightmarket-event-4 {
+    transition: transform 0.2s ease-out 0s;
+    top: 190vh;
+    left: 30vw;
+    position: absolute;
+    height: 40vh;
+    z-index: 3;
+    scale: 2;
 }

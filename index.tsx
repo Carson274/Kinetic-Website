@@ -17,6 +17,10 @@ const showcaseEventGradient = document.querySelector('#showcase-event-gradient')
 showcaseEventGradient.style.transition = 'none';
 showcaseEventGradient.style.opacity = '0';
 
+const nightmarketEventGradient = document.querySelector('#nightmarket-event-gradient') as HTMLElement;
+nightmarketEventGradient.style.transition = 'none';
+nightmarketEventGradient.style.opacity = '0';
+
 window.addEventListener('scroll', () => {
     // slide the "mission" title
     const missionTitle = document.querySelector('#mission-title') as HTMLElement;
@@ -55,18 +59,36 @@ window.addEventListener('scroll', () => {
     const showcaseEvent4 = document.querySelector('#showcase-event-4') as HTMLElement;
     showcaseEvent4.style.transform = `translate(0px, ${-300 * scrollPercentage}%) scale(0.7)`;
 
+    const nightmarketEvent1 = document.querySelector('#nightmarket-event-1') as HTMLElement;
+    nightmarketEvent1.style.transform = `translate(0px, ${-1000 * scrollPercentage}%) scale(0.8)`;
+    const nightmarketEvent2 = document.querySelector('#nightmarket-event-2') as HTMLElement;
+    nightmarketEvent2.style.transform = `translate(0px, ${-600 * scrollPercentage}%) scale(0.8)`;
+    const nightmarketEvent3 = document.querySelector('#nightmarket-event-3') as HTMLElement;
+    nightmarketEvent3.style.transform = `translate(0px, ${-450 * scrollPercentage}%) scale(0.7)`;
+    const nightmarketEvent4 = document.querySelector('#nightmarket-event-4') as HTMLElement;
+    nightmarketEvent4.style.transform = `translate(0px, ${-300 * scrollPercentage}%) scale(0.7)`;
+
     // add gradient with photos
     if(window.scrollY > 1600 && window.scrollY < 2400) {
         showcaseEventGradient.style.opacity = '0';
+        nightmarketEventGradient.style.opacity = '0';
         halloweenEventGradient.style.transition = 'opacity 1.5s';
         halloweenEventGradient.style.opacity = '1';
         progressBar.style.backgroundColor = 'red';
-    } else if(window.scrollY > 2400 && window.scrollY < 3000) {
+    } else if(window.scrollY > 2400 && window.scrollY < 3200) {
         halloweenEventGradient.style.opacity = '0';
+        nightmarketEventGradient.style.opacity = '0';
         showcaseEventGradient.style.transition = 'opacity 1.5s';
         showcaseEventGradient.style.opacity = '1';
         progressBar.style.backgroundColor = 'blue';
+    } else if(window.scrollY > 3200 && window.scrollY < 3800) {
+        halloweenEventGradient.style.opacity = '0';
+        showcaseEventGradient.style.opacity = '0';
+        nightmarketEventGradient.style.transition = 'opacity 1.5s';
+        nightmarketEventGradient.style.opacity = '1';
+        progressBar.style.backgroundColor = 'white';
     } else{
+        nightmarketEventGradient.style.opacity = '0';
         halloweenEventGradient.style.opacity = '0';
         showcaseEventGradient.style.opacity = '0';
         progressBar.style.backgroundColor = 'white';
