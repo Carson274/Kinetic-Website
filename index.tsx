@@ -46,16 +46,18 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = `${scrollPercentage * 100}%`;
 
     // show the event description
-    if(window.scrollY < 1700) {
+    if(window.scrollY < 1500) {
         eventDescription.style.opacity = '0';
+
+    } else if(window.scrollY > 1500 && window.scrollY < 1700) {
         showcaseEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
         halloweenEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
         nightmarketEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
 
         // name animations
-        halloweenEventName1.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
-        halloweenEventName2.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
-        halloweenEventName3.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventName1.style.animation = 'slide-down-name 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventName2.style.animation = 'slide-down-name 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventName3.style.animation = 'slide-down-name 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
 
     } else if(window.scrollY > 1700 && window.scrollY < 2400) {
         eventDescription.style.opacity = '1';
@@ -76,6 +78,12 @@ window.addEventListener('scroll', () => {
         showcaseEventDate.style.animation = 'slide-up 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
         halloweenEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
         nightmarketEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+
+        // name animations
+        halloweenEventName1.style.animation = 'slide-down-name 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventName2.style.animation = 'slide-down-name 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+        halloweenEventName3.style.animation = 'slide-down-name 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
+
     } else if(window.scrollY > 3200 && window.scrollY < 3800){
         eventDescription.style.opacity = '1';
         showcaseEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
@@ -166,7 +174,7 @@ setInterval(function () {
     elem.src = 'images/falling_star.png';
     let size = Math.ceil(Math.random() * 20) + 'px';
     elem.style.position = 'fixed';
-    elem.style.zIndex = 6;
+    elem.style.zIndex = 24;
     let randomAngle = Math.random() * Math.PI * 2;
     let randomRadius = Math.random() * 30 + 5;
     elem.style.top = cursorPosition.y + Math.sin(randomAngle) * randomRadius + 'px';
