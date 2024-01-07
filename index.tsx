@@ -46,10 +46,10 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = `${scrollPercentage * 100}%`;
 
     // show the event description
-    if(window.scrollY < 1500) {
+    if(window.scrollY < 1300) {
         eventDescription.style.opacity = '0';
 
-    } else if(window.scrollY > 1500 && window.scrollY < 1700) {
+    } else if(window.scrollY > 1300 && window.scrollY < 1700) {
         showcaseEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
         halloweenEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
         nightmarketEventDate.style.animation = 'slide-down 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards';
@@ -162,9 +162,13 @@ let cursorPosition = { x: 0, y: 0 };
 cursor.style.display = 'hidden';
 
 window.addEventListener('mousemove', function (e) {
-    cursor.style.display = 'shown';
-    cursor.style.left = `${e.clientX - 30}px`;
-    cursor.style.top = `${e.clientY - 32}px`;
+
+    this.setTimeout(() => {
+        cursor.style.display = 'shown';
+        cursor.style.left = `${e.clientX - 30}px`;
+        cursor.style.top = `${e.clientY - 32}px`;
+    }, 100);
+
     cursorPosition.x = e.clientX;
     cursorPosition.y = e.clientY;
 });
